@@ -14,7 +14,7 @@ class ProductSearchApp:
 
     def run(self):
         # Streamlit UI
-        st.title("Product Search App")
+        st.title("Query Engine")
         # st.text(self.intro_text)
 
         # User input for the search query
