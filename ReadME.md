@@ -1,9 +1,5 @@
 # Query Engine
-
-![gif](Data/streamlit-preview.gif)
-
-**Qdrant + LLM + FastAPI + Streamlit**
-
+**Using Qdrant + LLM + FastAPI + Streamlit**
 
 # Requirements
 Make sure you are using Python 3.X in your environment.\
@@ -21,7 +17,7 @@ Dependencies:
   
 
 
-# #Start
+# Steps to Follow
 
 
 ## 1. Start the Qdrant service
@@ -37,9 +33,9 @@ docker pull qdrant/qdrant
 ```
 docker run -p 6333:6333 -v $(pwd)/qdrant_storage:/qdrant/storage:z qdrant/qdrant
 ```
-->Under the default configuration, all data will be stored in the ./qdrant_storage directory.
+* Under the default configuration, all data will be stored in the ./qdrant_storage directory.
 
-->Qdrant is now accessible: 
+* Qdrant is now accessible: 
   API: localhost:6333
 
 
@@ -65,7 +61,7 @@ Note: The Embeddings are being generated using the "all-MiniLM-L6-v2" model, how
 ```
 python3 uploader.py
 ```
--> This will upload the vector embeddings and payload (additional information along with vectors to display search results) in the qdrant database.
+* This will upload the vector embeddings and payload (additional information along with vectors to display search results) in the qdrant database.
 
 
 ## 3. Load the API service
@@ -73,7 +69,7 @@ In order to start the Fast API service, run the service.py file using the below 
 ```
 uvicorn service:app --reload  
 ```
--> You may now navigate to [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to access fastAPI interactive API documentation to search in a query
+* You may now navigate to [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to access fastAPI interactive API documentation to search in a query
 
 
 ## 4. Start the Frontend application.
@@ -81,21 +77,15 @@ Finally, start our interactive frontend web app; run the following command in a 
 ```
 streamlit run app.py
 ```
--> The app will automatically start, The Local URL and network URL are displayed in the terminal you can access it from the links as well.
-
+ The app will automatically start, The Local URL and network URL are displayed in the terminal you can access it from the links as well.
+![frontend](Data/frontend.png)
 
 **Simply type in the query in the text box and press the search button.**
 
-Dataset used is [Big-Basket-Products-Dataset](https://chaabiv2.s3.ap-south-1.amazonaws.com/hiring/bigBasketProducts.csv)
+# Search results:
+ ![query1](Data/query1.png)
+ ![query2](Data/query2.png)
 
-Here are some Search results:
-* .
- ![glucose](Data/glucose.png)
-
-* .
- ![tooth](Data/tooth_brush.png)
-***Special Thanks to Chaabi for giving the Problem Statement***
-![Problem-Statement](Data/Assignment.png)
-
-
-***In the symphony of growth, knowledge is the key, and experience the gentle notes that compose our unique melody.***
+## Special Thanks to Chaabi for giving the Problem Statement
+* Problem Statement - [Link](https://github.com/seneg0id/Query_Engine/blob/main/Data/assignment'23.pdf)
+* Dataset - [Link](https://github.com/seneg0id/Query_Engine/blob/main/Data/bigBasketProducts.csv)
