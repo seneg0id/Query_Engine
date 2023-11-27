@@ -80,7 +80,7 @@ streamlit run app.py
  The app will automatically start, The Local URL and network URL are displayed in the terminal you can access it from the links as well.
 ![frontend](Data/frontend.png)
 
-**Simply type in the query in the text box and press the search button.**
+* Simply type in the query in the text box and press the search button.
 
 # Search results:
  ![query1](Data/query1.png)
